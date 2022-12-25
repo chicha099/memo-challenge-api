@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('retries');
             $table->integer('numberOfPairs');
             $table->enum('state', ['Started', 'Completed']);
+            $table->json('completedPairs');
             $table->timestamps();
         });
     }

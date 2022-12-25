@@ -16,9 +16,9 @@ type Mutation {
   createMemo(name: String!, images: [String]!): Memo! @create
   deleteMemo(id: ID!): Memo! @delete
   updateMemo(id: ID!, name: String, images: [String]): Memo! @update
-  createGameSession(memoId: ID!, retries: Int, numberOfPairs: Int, state: State): GameSession! @create
+  createGameSession(memoId: ID!, retries: Int, numberOfPairs: Int, state: State, completedPairs: [String]): GameSession! @create
   deleteGameSession(id: ID!): GameSession! @delete
-  updateGameSession(id: ID!, retries: Int, numberOfPairs: Int, state: State): GameSession! @update
+  updateGameSession(id: ID!, retries: Int, numberOfPairs: Int, state: State, completedPairs: [String]): GameSession! @update
 }
 
 type Memo {
@@ -30,8 +30,9 @@ type Memo {
 type GameSession {
   id: ID!
   memoId: ID!
-  retries: Int
-  numberOfPairs: Int
-  state: State
+  retries: Int!
+  numberOfPairs: Int!
+  state: State!
+  completedPairs: [String]!
 }
 
