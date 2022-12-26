@@ -26,6 +26,8 @@ See /config/database.php to see available connections and how to configure them
 ### `DB_USERNAME=username`
 ### `DB_PASSWORD=password`
 
+Or copy the content on laravel's .env.example file
+
 
 
 
